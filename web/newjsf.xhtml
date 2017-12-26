@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+             <div class="whom">    
+            <p>Please enter email whom u want to send<br></br>
+                <h:inputText id="eamil_id" required ="true" 
+                             requiredMessage="The Email_id field cannot be empty"
+                        title="Please enter your Email_id"
+                        value="#{composeemail.whomtosend}"
+                 validatorMessage="The ID must be between 3 and 10 characters">
+                    <f:validateLength maximum="10" minimum="3" />
+                </h:inputText>
+            </p>
+             </div>
+            
+            <p> subject<br/>
+                <h:inputTextarea value="#{composeemail.subject}"></h:inputTextarea><br/>
+                     
+                message<br/>
+                <h:inputTextarea value="#{composeemail.message}"></h:inputTextarea><br/>
+                     
+            
+                <h:selectBooleanCheckbox  value="#{composeemail.remmeberme}"/> Do you want to get notification when receiver reads <br/>
+           
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{composeemail.composemail(login.email_id)}" />
+            </p>
+
+        </h:form>
+    </h:body>
+</html>
+

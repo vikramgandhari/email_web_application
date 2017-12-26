@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+    </h:head>
+    <h:body>
+       
+        <h:form>
+            <h3>Login to  Your Group 5 email Account!</h3>
+                 
+            <p>Please enter your email ID:<br></br>
+                <h:inputText id="eamil_id" required ="true" 
+                             requiredMessage="The Email_id field cannot be empty"
+                        title="Please enter your Email_id"
+                        value="#{login.email_id}"
+                 validatorMessage="The ID must be between 3 and 10 characters">
+                    <f:validateLength maximum="10" minimum="3" />
+                </h:inputText>
+            </p>
+            
+            <p>Please enter your password:<br></br>
+                   <h:inputSecret id="password" required="true" requiredMessage="password should not be empty" value="#{login.password}"></h:inputSecret>
+                     
+            </p>
+            <p>
+                <h:commandButton id="login" value="Submit"
+                                 action="#{login.login()}" />
+            </p>
+
+        </h:form>
+        
+    </h:body>
+</html>

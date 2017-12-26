@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>welcome</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+            <style>
+                body{
+                    background-image: url("image1.jpg");
+                    
+                }
+                .tba{
+                  margin-left: 16%;
+                  font-size: 22px;
+                  font-weight: bold;
+                }
+               
+            </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="w3-sidebar w3-black w3-center ">
+             <p>
+             
+                 <h:link outcome="composeemail.xhtml">
+                  Compose
+                </h:link>   <br/> 
+              
+                 
+              
+                 <h:link outcome="successlogin.xhtml">
+                  inbox
+                 </h:link>  <br/>  
+                
+             
+                 <h:link outcome="sentmail.xhtml">
+                  sentmail
+                </h:link>   <br/> 
+                
+           
+                 <h:link outcome="trash.xhtml">
+                  trash
+                </h:link>  <br/>
+               
+            
+                  <h:link outcome="index.xhtml">
+                 logout
+                 </h:link>  <br/>
+               
+            </p>
+         </div>
+           
+            
+             <div class="tba">
+            <h:dataTable id="a2" 
+                         rows ="#{login.a2.size()}" 
+                         value="#{login.a2}" var="emailjbj">  
+                
+                
+                <h:column>  
+                    <h:commandLink value="#{emailjbj.from},#{emailjbj.subject},#{emailjbj.neworold},#{emailjbj.datentime}"  action="#{login.getEmailByID(emailjbj.accountnum)}"/>
+                </h:column>
+                    
+                 
+            </h:dataTable>  
+                 </div >
+                 
+        </h:form>
+    </h:body>
+</html>
+

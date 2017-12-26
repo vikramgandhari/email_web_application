@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>RePlY</title>
+        <style>
+            body{
+                background-image: url("image1.jpg");
+            }
+            .whom{
+                margin-top: 17%;
+            }
+            p{
+                text-align: center;
+                font-size: 22px;
+                font-weight: bold;
+            }
+        </style> 
+    </h:head>
+    <h:body>
+       
+        <h:form>
+         
+                 
+              <div class="whom">     
+             <p>Please enter your message:<br></br>
+                <h:inputTextarea value="#{replyemail.message}"/>
+                     
+            </p>
+              </div>
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{replyemail.rlyemail(login.readSelectedEmail().to, login.readSelectedEmail().email_account, login.readSelectedEmail().subject, login.readSelectedEmail().message)}" />
+            </p>
+
+        </h:form>
+        
+    </h:body>
+</html>

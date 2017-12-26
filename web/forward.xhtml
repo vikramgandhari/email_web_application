@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>fOrWarD!</title>
+        <style>
+            body{
+                background-image: url("image1.jpg");
+            }
+            .whom{
+                margin-top: 17%;
+            }
+            p{
+                text-align: center;
+                font-size: 22px;
+                font-weight: bold;
+            }
+        </style> 
+    </h:head>
+    <h:body>
+       
+        <h:form>
+           
+            <div class="whom">     
+            <p>Please enter whom u want to send<br></br>
+                <h:inputText id="eamil_id232" required ="true" 
+                             requiredMessage="The Email_id field cannot be empty"
+                        title="Please enter your Email_id"
+                        value="#{forwardemail.whomtosend}"
+                 validatorMessage="The ID must be between 3 and 10 characters">
+                    <f:validateLength maximum="10" minimum="3" />
+                </h:inputText>
+            </p>
+            </div>
+          
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{forwardemail.fwdemail(login.readSelectedEmail().to, login.readSelectedEmail().message, login.readSelectedEmail().subject)}" />
+            </p>
+
+        </h:form>
+        
+    </h:body>
+</html>

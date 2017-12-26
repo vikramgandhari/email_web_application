@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+        <style>
+            p{
+                text-align:center;
+                color:black;
+                font-family: cursive;
+               
+            }
+            .email{
+                
+            }
+            .heading{
+                text-align: center;
+                margin-top:12%;
+                color:black;
+                font-family: cursive;
+                
+            }
+            body{
+                background-image: url("image1.jpg");
+            }
+            
+        </style>
+
+    </h:head>
+     
+    <h:body >
+        
+           <div id="container">  
+        <h:form id="authenticate">
+        
+            <div class="heading">
+                <h2>Group 5 email!</h2>
+            </div>
+            <div class="email">
+                
+                <p><label>email:</label><br/><h:inputText id="eamil_id" required ="true" 
+                             requiredMessage="The Email_id field cannot be empty"
+                        title="Please enter your Email_id"
+                        value="#{login.email_id}"
+                 validatorMessage="The ID must be between 3 and 10 characters">
+                    <f:validateLength maximum="10" minimum="3" />
+                </h:inputText></p>
+            </div>
+    
+            <p>
+                <label>password:</label><br/>
+               <h:inputSecret id="password" required="true" requiredMessage="password should not be empty" value="#{login.password}"></h:inputSecret> 
+            </p>
+                
+                   <div></div>
+                   <p>
+                       <h:commandButton id="login" value="login"
+                                 action="#{login.login()}" />
+                   </p>
+                
+                <div></div>
+                <p>
+                     <h:link outcome="register.xhtml">
+                  Sign uP!
+                </h:link>
+                </p>
+                    
+                
+              
+
+        </h:form>
+        </div>
+
+    </h:body>
+</html>
+

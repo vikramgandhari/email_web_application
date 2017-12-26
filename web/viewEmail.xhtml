@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>FROM  #{login.readSelectedEmail().from}</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <style>
+                body{
+                    background-image: url("image1.jpg");
+                    
+                }
+                .tba{
+                  margin-left: 16%;
+                  font-size: 22px;
+                  font-weight: bold;
+                }
+               
+            </style>
+    </head>
+    <body> 
+        <h:form>
+          <div class="w3-sidebar w3-black w3-center ">  
+              <p>
+         <h:link outcome="forward.xhtml">
+           forward email
+         </h:link>  <br/>
+           
+        
+          <h:link outcome="reply.xhtml">
+           reply email
+         </h:link><br/> 
+         
+        
+      
+          <h:commandLink id="deletemail" value="deletemail"
+                                 action="#{delete.delemail(login.readSelectedEmail().accountnum)}" /><br/>
+         
+         
+          <h:commandLink value= "go back"  action="#{login.login()}"/><br/>
+              </p>
+          </div>
+     
+            <div class="tba">
+        
+            subject: #{login.readSelectedEmail().subject}<br/>
+           
+        
+            message:<h:outputText value="${login.readSelectedEmail().message}" escape="false"/>
+            </div>
+            </h:form>
+    </body>
+</html>
